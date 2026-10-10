@@ -1,0 +1,422 @@
+/* ==========================================================================
+   MindLens: Gentle Mental Health Sanctuary Design System
+   Aesthetic Rules:
+   - NO dark mode / NO dark backgrounds
+   - NO blues, NO blacks, NO greens, or anything related to them
+   - Warm, comforting, therapeutic: Terracotta, Soft Lavender, Rose, Warm Amber, Porcelain Silk
+   ========================================================================== */
+
+:root {
+  /* Warm Porcelain & Linen Canvas */
+  --bg-canvas: #FAF6F0;
+  --bg-surface: #FFFDFB;
+  --bg-surface-soft: #F8F1EA;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --bg-glass: rgba(255, 255, 255, 0.75);
+
+  /* Warm Terracotta & Desert Rose (Primary) */
+  --primary: #D97051;
+  --primary-hover: #C55E40;
+  --primary-light: #F28482;
+  --primary-subtle: #FDF1ED;
+  --primary-glow: rgba(217, 112, 81, 0.22);
+
+  /* Calming Lavender & Gentle Mauve (Secondary / Mindfulness) */
+  --secondary: #9D81BA;
+  --secondary-hover: #8B6FA8;
+  --secondary-light: #B5838D;
+  --secondary-subtle: #F7F1FA;
+  --secondary-glow: rgba(157, 129, 186, 0.25);
+
+  /* Radiant Amber & Peach Sunset (Optimism / Accents) */
+  --accent: #E79E7E;
+  --accent-warm: #F4A261;
+  --accent-gold: #E9C46A;
+  --accent-subtle: #FFF4EC;
+  --accent-glow: rgba(244, 162, 97, 0.25);
+
+  /* Category Specific Warm Tones (Zero Blue, Zero Green, Zero Black) */
+  --cat-normal: #E79E7E;
+  --cat-normal-bg: #FFF4EC;
+  --cat-anxiety: #F28482;
+  --cat-anxiety-bg: #FDF1F1;
+  --cat-depression: #9D81BA;
+  --cat-depression-bg: #F6F1FA;
+  --cat-stress: #D97051;
+  --cat-stress-bg: #FDF1ED;
+  --cat-bipolar: #B5838D;
+  --cat-bipolar-bg: #FAF0F2;
+  --cat-personality: #A57982;
+  --cat-personality-bg: #F8EFF1;
+  --cat-suicidal: #D64045;
+  --cat-suicidal-bg: #FDF0F0;
+
+  /* Earthy Espresso & Warm Cocoa Typography (Zero Pure Black) */
+  --text-primary: #3F302B;
+  --text-secondary: #68554F;
+  --text-muted: #9E8981;
+  --text-light: #C0ADA6;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(217, 112, 81, 0.14);
+  --border-card: rgba(242, 132, 130, 0.22);
+  --border-focus: rgba(217, 112, 81, 0.45);
+
+  /* Soft Ambient Shadows */
+  --shadow-sm: 0 4px 14px rgba(217, 112, 81, 0.05);
+  --shadow-md: 0 10px 28px rgba(217, 112, 81, 0.08);
+  --shadow-lg: 0 20px 48px rgba(181, 131, 141, 0.12);
+  --shadow-glow: 0 0 35px rgba(242, 132, 130, 0.28);
+  --shadow-lavender: 0 12px 36px rgba(157, 129, 186, 0.16);
+
+  /* Typography */
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Spacing & Radii */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Ambient Radial Backdrops */
+body {
+  background-image: 
+    radial-gradient(circle at 12% 14%, rgba(242, 132, 130, 0.16) 0%, transparent 40%),
+    radial-gradient(circle at 88% 22%, rgba(157, 129, 186, 0.14) 0%, transparent 42%),
+    radial-gradient(circle at 50% 80%, rgba(244, 162, 97, 0.12) 0%, transparent 48%),
+    radial-gradient(circle at 80% 90%, rgba(224, 122, 95, 0.1) 0%, transparent 35%);
+  background-attachment: fixed;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  transition: all var(--transition-smooth);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* ==========================================================================
+   Card & Glassmorphism Utilities
+   ========================================================================== */
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #FFFDFB;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px var(--primary-glow);
+  filter: brightness(1.03);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  color: #FFFDFB;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 20px var(--secondary-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px var(--secondary-glow);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  background: #FFFDFB;
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-ghost:hover {
+  background: var(--primary-subtle);
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Micro-Animations
+   ========================================================================== */
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes breatheOrb {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 25px rgba(242, 132, 130, 0.35);
+  }
+  40% {
+    transform: scale(1.18);
+    box-shadow: 0 0 65px rgba(217, 112, 81, 0.55);
+  }
+  60% {
+    transform: scale(1.18);
+    box-shadow: 0 0 65px rgba(157, 129, 186, 0.55);
+  }
+  100% {
+    transform: scale(0.92);
+    box-shadow: 0 0 25px rgba(242, 132, 130, 0.35);
+  }
+}
+
+@keyframes warmPulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.breathing-orb {
+  animation: breatheOrb 12s ease-in-out infinite;
+}
+
+/* Custom Scrollbar in Warm Hues */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 112, 81, 0.28);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 112, 81, 0.45);
+}
+
+/* Audio Waveform Bars */
+@keyframes audioWave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 22px;
+  }
+}
+
+.wave-bar {
+  width: 3.5px;
+  background: var(--primary);
+  border-radius: var(--radius-pill);
+  animation: audioWave 1.2s ease-in-out infinite;
+}
+
+/* Voice Mic Pulse Ripple */
+@keyframes micRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 112, 81, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(217, 112, 81, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 112, 81, 0);
+  }
+}
+
+.mic-active {
+  animation: micRipple 1.6s infinite !important;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+  color: #FFFDFB !important;
+}
+
+/* Warm Synaptic Neural Loading Ring */
+@keyframes synapticPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(242, 132, 130, 0.5));
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.synaptic-loading {
+  animation: synapticPulse 2.4s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+

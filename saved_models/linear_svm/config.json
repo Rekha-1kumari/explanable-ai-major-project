@@ -1,0 +1,18 @@
+{
+  "model_name": "linear_svm",
+  "max_features": 5000,
+  "ngram_range": [
+    1,
+    2
+  ],
+  "tuned": true,
+  "classes_": [
+    "Anxiety",
+    "Bipolar",
+    "Depression",
+    "Normal",
+    "Personality disorder",
+    "Stress",
+    "Suicidal"
+  ]
+}
